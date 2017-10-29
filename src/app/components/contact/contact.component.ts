@@ -5,6 +5,7 @@ import { IContact } from './IContact';
 import { Router } from '@angular/router';
 import { NgForm, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Contact, ContactService } from './contact.service';
+import { Message } from 'primeng/primeng';
 
 @Component({
   selector: 'b-contact',
@@ -20,6 +21,7 @@ export class ContactComponent implements OnInit {
   name: string;
   contactCollection: AngularFirestoreCollection<IContact>;
   contacts: Observable<IContact[]>;
+  msgs: Message[] = [];
   constructor(private afs: AngularFirestore, private router: Router, private contactService: ContactService, private fb: FormBuilder) {
     this.contactCollection = this.afs.collection('contacts');
     this.contacts = this.contactCollection.valueChanges();
@@ -31,10 +33,10 @@ export class ContactComponent implements OnInit {
       message: ['', [Validators.required, Validators.minLength(15)]]
     });
   }
-
   onSubmit(form: NgForm) {
     this.contactService.addContact(form.value);
+    this.msgs.push({ severity: 'sucess', summary: 'Contact has been sent to concern department', detail: 'Sent' });
+    
   }
-
 }
 

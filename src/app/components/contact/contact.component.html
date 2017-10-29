@@ -1,59 +1,63 @@
-<section class="section">
-  <div class="container">
-    <form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
-      <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-          <input class="input" name="name" required [(ngModel)]="name" type="text" placeholder="e.g Ramprit Sahani" #pickedName="ngModel">
+<div class="box">
+  <section class="section">
+    <p-growl [(value)]="msgs"></p-growl>
+    <div class="container">
+      <form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" name="name" required [(ngModel)]="name" type="text" placeholder="e.g Ramprit Sahani" #pickedName="ngModel">
+          </div>
+          <div *ngIf="!pickedName.valid && pickedName.touched" style="color:hsl(348, 100%, 61%)">
+            Name is required!
+          </div>
         </div>
-        <div *ngIf="!pickedName.valid && pickedName.touched" style="color:hsl(348, 100%, 61%)">
-          Name is required!
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Subject</label>
-        <div class="control">
-          <input class="input" name="subject" required #pickedSubject="ngModel" [(ngModel)]="subject" type="text" placeholder="Subject">
+        <div class="field">
+          <label class="label">Subject</label>
+          <div class="control">
+            <input class="input" name="subject" required #pickedSubject="ngModel" [(ngModel)]="subject" type="text" placeholder="Subject">
 
+          </div>
+          <div *ngIf="!pickedSubject.valid && pickedSubject.touched" style="color:hsl(348, 100%, 61%)">
+            Subject is required!
+          </div>
         </div>
-        <div *ngIf="!pickedSubject.valid && pickedSubject.touched" style="color:hsl(348, 100%, 61%)">
-          Subject is required!
+        <div class="field">
+          <label class="label">Mobile</label>
+          <div class="control">
+            <input class="input" type="text" required name="mobile" #pickedMobile="ngModel" [(ngModel)]="mobile" placeholder="e.g.9867405720">
+          </div>
+          <div *ngIf="!pickedMobile.valid && pickedMobile.touched" style="color:hsl(348, 100%, 61%)">
+            Mobile number is required!
+          </div>
         </div>
-      </div>
-      <div class="field">
-        <label class="label">Mobile</label>
-        <div class="control">
-          <input class="input" type="text" required name="mobile" #pickedMobile="ngModel" [(ngModel)]="mobile" placeholder="e.g.9867405720">
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" required [(ngModel)]="email" #pickedEmail="ngModel" name="email" placeholder="e.g. alexsmith@gmail.com">
+          </div>
+          <div *ngIf="!pickedEmail.valid && pickedEmail.touched" style="color:hsl(348, 100%, 61%)">
+            Email address is required!
+          </div>
         </div>
-        <div *ngIf="!pickedMobile.valid && pickedMobile.touched" style="color:hsl(348, 100%, 61%)">
-          Mobile number is required!
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea class="textarea" type="text" required #pickedMessege="ngModel" [(ngModel)]="messege" name="messege" placeholder="e.g. Message"></textarea>
+          </div>
+          <div *ngIf="!pickedMessege.valid && pickedMessege.touched" style="color:hsl(348, 100%, 61%)">
+            Messege is required!
+          </div>
         </div>
-      </div>
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input class="input" type="email" required [(ngModel)]="email" #pickedEmail="ngModel" name="email" placeholder="e.g. alexsmith@gmail.com">
+        <div class="field">
+          <p class="control">
+            <button type="submit" [disabled]="newUserForm.invalid" class="button is-success">
+              Submit
+            </button>
+            <a [routerLink]="['/home']" class="button is-danger">Cancel</a>
+          </p>
         </div>
-        <div *ngIf="!pickedEmail.valid && pickedEmail.touched" style="color:hsl(348, 100%, 61%)">
-          Email address is required!
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Message</label>
-        <div class="control">
-          <textarea class="textarea" type="text" required #pickedMessege="ngModel" [(ngModel)]="messege" name="messege" placeholder="e.g. Message"></textarea>
-        </div>
-        <div *ngIf="!pickedMessege.valid && pickedMessege.touched" style="color:hsl(348, 100%, 61%)">
-          Messege is required!
-        </div>
-      </div>
-      <div class="field">
-        <p class="control">
-          <button type="submit" [disabled]="newUserForm.invalid" class="button is-success">
-            Submit
-          </button>
-        </p>
-      </div>
-    </form>
-  </div>
-</section>
+      </form>
+    </div>
+  </section>
+</div>

@@ -6,10 +6,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { DataTableModule } from 'primeng/primeng';
 import { SharedModule } from 'primeng/primeng';
-
+import { GrowlModule } from 'primeng/primeng';
+import { ConfirmationService } from 'primeng/components/common/confirmationservice';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,10 @@ import { PostService } from './components/post/post.service';
 import { ContactComponent } from './components/contact/contact.component';
 import { environment } from '../environments/environment';
 import { ContactService } from './components/contact/contact.service';
+import { AuthService } from './components/auth/auth.service';
+import { AuthGuard } from './components/auth/auth.guard';
+import { FruitsComponent } from './components/fruits/fruits.component';
+import { FruitService } from './components/fruits/fruit.service';
 
 @NgModule({
   declarations: [
@@ -27,20 +33,29 @@ import { ContactService } from './components/contact/contact.service';
     NavBarComponent,
     HomeComponent,
     PostComponent,
-    ContactComponent
+    ContactComponent,
+    FruitsComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
     DataTableModule,
+    AngularFireAuthModule,
     SharedModule,
     ReactiveFormsModule,
     HttpModule,
+    GrowlModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence()
   ],
-  providers: [PostService, ContactService],
+  providers: [
+    ConfirmationService,
+    PostService,
+    ContactService,
+    AuthService,
+    AuthGuard,
+    FruitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
