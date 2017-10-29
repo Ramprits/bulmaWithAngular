@@ -1,0 +1,8 @@
+<div class="box">
+  <div class="container">
+    <p-dataTable [resizableColumns]="true" [value]="posts" sortMode="multiple" [responsive]="true" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+      <p-column field="title" header="Title" [sortable]="true"></p-column>
+      <p-column field="body" header="Body" [sortable]="true"></p-column>
+    </p-dataTable>
+  </div>
+</div>
