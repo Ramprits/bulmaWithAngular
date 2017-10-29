@@ -4,40 +4,52 @@
       <div class="field">
         <label class="label">Name</label>
         <div class="control">
-          <input class="input" name="name" [(ngModel)]="name" type="text" placeholder="e.g Ramprit Sahani" #pickedName="ngModel">
+          <input class="input" name="name" required [(ngModel)]="name" type="text" placeholder="e.g Ramprit Sahani" #pickedName="ngModel">
         </div>
-        <div *ngIf="!pickedName.valid && pickedName.touched">
+        <div *ngIf="!pickedName.valid && pickedName.touched" style="color:hsl(348, 100%, 61%)">
           Name is required!
         </div>
       </div>
       <div class="field">
         <label class="label">Subject</label>
         <div class="control">
-          <input class="input" name="subject" [(ngModel)]="subject" type="text" placeholder="Subject">
+          <input class="input" name="subject" required #pickedSubject="ngModel" [(ngModel)]="subject" type="text" placeholder="Subject">
 
+        </div>
+        <div *ngIf="!pickedSubject.valid && pickedSubject.touched" style="color:hsl(348, 100%, 61%)">
+          Subject is required!
         </div>
       </div>
       <div class="field">
         <label class="label">Mobile</label>
         <div class="control">
-          <input class="input" type="text" name="mobile" [(ngModel)]="mobile" placeholder="e.g.9867405720">
+          <input class="input" type="text" required name="mobile" #pickedMobile="ngModel" [(ngModel)]="mobile" placeholder="e.g.9867405720">
+        </div>
+        <div *ngIf="!pickedMobile.valid && pickedMobile.touched" style="color:hsl(348, 100%, 61%)">
+          Mobile number is required!
         </div>
       </div>
       <div class="field">
         <label class="label">Email</label>
         <div class="control">
-          <input class="input" type="email" [(ngModel)]="email" name="email" placeholder="e.g. alexsmith@gmail.com">
+          <input class="input" type="email" required [(ngModel)]="email" #pickedEmail="ngModel" name="email" placeholder="e.g. alexsmith@gmail.com">
+        </div>
+        <div *ngIf="!pickedEmail.valid && pickedEmail.touched" style="color:hsl(348, 100%, 61%)">
+          Email address is required!
         </div>
       </div>
       <div class="field">
         <label class="label">Message</label>
         <div class="control">
-          <textarea class="textarea" type="text" [(ngModel)]="messege" name="messege" placeholder="e.g. Message"></textarea>
+          <textarea class="textarea" type="text" required #pickedMessege="ngModel" [(ngModel)]="messege" name="messege" placeholder="e.g. Message"></textarea>
+        </div>
+        <div *ngIf="!pickedMessege.valid && pickedMessege.touched" style="color:hsl(348, 100%, 61%)">
+          Messege is required!
         </div>
       </div>
       <div class="field">
         <p class="control">
-          <button type="submit" class="button is-success">
+          <button type="submit" [disabled]="newUserForm.invalid" class="button is-success">
             Submit
           </button>
         </p>

@@ -25,9 +25,6 @@ export class ContactService {
 }
 
 export class Contact {
-  name: 'Ramprit Sahani';
-  email: 'Rampritsahani@outlook.in';
-  messege: 'Hello messege';
-  subject: 'forbidden';
-  mobile: '9867405720'
+  constructor(public name: '', public email: '', public messege: '', public subject: '', public mobile: '') {
+  }
 }
