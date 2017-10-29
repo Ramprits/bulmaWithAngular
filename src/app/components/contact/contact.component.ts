@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { IContact } from './IContact';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Contact, ContactService } from './contact.service';
 
 @Component({
   selector: 'b-contact',
@@ -18,26 +19,16 @@ export class ContactComponent implements OnInit {
   name: string;
   contactCollection: AngularFirestoreCollection<IContact>;
   contacts: Observable<IContact[]>;
-  constructor(private afs: AngularFirestore, private router: Router) {
+  constructor(private afs: AngularFirestore, private router: Router, private contactService: ContactService) {
     this.contactCollection = this.afs.collection('contacts');
     this.contacts = this.contactCollection.valueChanges();
   }
   ngOnInit() {
   }
-  addContact() {
-    this.afs.collection('contacts').add({
-      'name': this.name,
-      'messege': this.messege,
-      'email': this.email,
-      'mobile': this.mobile,
-      'subject': this.subject
-    });
-    this.router.navigate(['/home']);
-  }
-  onSubmit(form: NgForm) {
-    if (form.valid) {
-      console.log(form.value);
-    }
 
+  onSubmit(form: NgForm) {
+    this.contactService.addContact(form.value);
   }
+
 }
+

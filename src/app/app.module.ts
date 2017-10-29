@@ -19,6 +19,7 @@ import { PostComponent } from './components/post/post.component';
 import { PostService } from './components/post/post.service';
 import { ContactComponent } from './components/contact/contact.component';
 import { environment } from '../environments/environment';
+import { ContactService } from './components/contact/contact.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence()
   ],
-  providers: [PostService],
+  providers: [PostService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

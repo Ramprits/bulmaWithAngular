@@ -1,16 +1,20 @@
 <section class="section">
   <div class="container">
-    <form>
+    <form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
       <div class="field">
         <label class="label">Name</label>
         <div class="control">
-          <input class="input" name="name" [(ngModel)]="name" type="text" placeholder="e.g Alex Smith">
+          <input class="input" name="name" [(ngModel)]="name" type="text" placeholder="e.g Ramprit Sahani" #pickedName="ngModel">
+        </div>
+        <div *ngIf="!pickedName.valid && pickedName.touched">
+          Name is required!
         </div>
       </div>
       <div class="field">
         <label class="label">Subject</label>
         <div class="control">
           <input class="input" name="subject" [(ngModel)]="subject" type="text" placeholder="Subject">
+
         </div>
       </div>
       <div class="field">
@@ -33,7 +37,7 @@
       </div>
       <div class="field">
         <p class="control">
-          <button class="button is-success" (click)="addContact()">
+          <button type="submit" class="button is-success">
             Submit
           </button>
         </p>
