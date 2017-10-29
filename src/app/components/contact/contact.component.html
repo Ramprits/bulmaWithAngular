@@ -1,41 +1,43 @@
 <section class="section">
   <div class="container">
-    <div class="field">
-      <label class="label">Name</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="e.g Alex Smith">
+    <form>
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" name="name" [(ngModel)]="name" type="text" placeholder="e.g Alex Smith">
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label">Subject</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Subject">
+      <div class="field">
+        <label class="label">Subject</label>
+        <div class="control">
+          <input class="input" name="subject" [(ngModel)]="subject" type="text" placeholder="Subject">
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label">Mobile</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="e.g.9867405720">
+      <div class="field">
+        <label class="label">Mobile</label>
+        <div class="control">
+          <input class="input" type="text" name="mobile" [(ngModel)]="mobile" placeholder="e.g.9867405720">
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label">Email</label>
-      <div class="control">
-        <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" [(ngModel)]="email" name="email" placeholder="e.g. alexsmith@gmail.com">
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <label class="label">Message</label>
-      <div class="control">
-        <textarea class="textarea" type="text" placeholder="e.g. Message"></textarea>
+      <div class="field">
+        <label class="label">Message</label>
+        <div class="control">
+          <textarea class="textarea" type="text" [(ngModel)]="messege" name="messege" placeholder="e.g. Message"></textarea>
+        </div>
       </div>
-    </div>
-    <div class="field">
-      <p class="control">
-        <button class="button is-success">
-          Submit
-        </button>
-      </p>
-    </div>
+      <div class="field">
+        <p class="control">
+          <button class="button is-success" (click)="addContact()">
+            Submit
+          </button>
+        </p>
+      </div>
+    </form>
   </div>
 </section>

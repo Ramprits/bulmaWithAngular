@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -27,11 +29,12 @@ import { environment } from '../environments/environment';
     ContactComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     DataTableModule,
     SharedModule,
-    // AngularFireAuthModule, 
+    ReactiveFormsModule,
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence()
