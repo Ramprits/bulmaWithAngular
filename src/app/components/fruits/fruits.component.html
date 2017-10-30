@@ -1,6 +1,23 @@
-<p>
-  fruits works!
-</p>
-<div *ngFor="let item of fruits">
-  {{item.name}}
+<div class="container">
+  <div class="section">
+    <div class="columns">
+      <div class="column" *ngFor="let fruit of fruits">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <strong>{{fruit.title}}</strong>
+            <div class="content">
+              {{fruit.description}}
+              <br>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
