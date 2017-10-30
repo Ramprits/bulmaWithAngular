@@ -5,12 +5,14 @@ import { PostComponent } from './components/post/post.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AuthGuard } from './components/auth/auth.guard';
 import { FruitsComponent } from './components/fruits/fruits.component';
+import { NewFruitComponent } from './components/new-fruit/new-fruit.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'posts', component: PostComponent, canActivate: [AuthGuard] },
   { path: 'contacts', component: ContactComponent, canActivate: [AuthGuard] },
+  { path: 'newFruit', component: NewFruitComponent },
   { path: 'fruits', component: FruitsComponent },
 ];
 

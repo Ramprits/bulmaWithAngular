@@ -26,6 +26,7 @@ import { AuthService } from './components/auth/auth.service';
 import { AuthGuard } from './components/auth/auth.guard';
 import { FruitsComponent } from './components/fruits/fruits.component';
 import { FruitService } from './components/fruits/fruit.service';
+import { NewFruitComponent } from './components/new-fruit/new-fruit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FruitService } from './components/fruits/fruit.service';
     HomeComponent,
     PostComponent,
     ContactComponent,
-    FruitsComponent
+    FruitsComponent,
+    NewFruitComponent
   ],
   imports: [
     FormsModule,

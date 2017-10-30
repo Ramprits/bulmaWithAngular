@@ -1,0 +1,46 @@
+<div class="section">
+  <div class="container">
+    <form [formGroup]="fruitForm" (ngSubmit)="onSubmit(fruitForm.value)">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" formControlName="name" type="text" placeholder="e.g Alex Smith">
+        </div>
+        <div *ngIf="fruitForm.get('name').hasError('required')">
+          Oops, please name!
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Title</label>
+        <div class="control">
+          <input class="input" formControlName="title" type="text" placeholder="your title">
+        </div>
+        <div *ngIf="fruitForm.get('title').hasError('required')">
+          Oops, please title!
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Path</label>
+        <div class="control">
+          <input class="input" formControlName="path" type="text" placeholder="your title">
+        </div>
+        <div *ngIf="fruitForm.get('path').hasError('required')">
+          Oops, please image path!
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Description</label>
+        <div class="control">
+          <input class="input" formControlName="description" type="text" placeholder="your title">
+        </div>
+        <div *ngIf="fruitForm.get('description').hasError('required')">
+          Oops, please description!
+        </div>
+
+      </div>
+      <button class="button is-primary" [disabled]="fruitForm.invalid" type="submit">Save</button>
+      <button class="button is-danger" [routerLink]="['/home']" type="reset">Cancel</button>
+    </form>
+  </div>
+</div>

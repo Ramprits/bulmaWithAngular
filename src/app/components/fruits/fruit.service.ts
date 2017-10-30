@@ -16,4 +16,17 @@ export class FruitService {
     this.fruitsCollection = this.afs.collection('fruits');
     return this.fruits = this.fruitsCollection.valueChanges();
   }
+  addFruit(fruit: Fruit) {
+    this.afs.collection('fruits').add({
+      'name': fruit.name,
+      'title': fruit.title,
+      'path': fruit.path,
+      'description': fruit.description
+    });
+    this.router.navigate(['/home']);
+  }
+}
+
+export class Fruit {
+  constructor(public name: '', public title: '', public path: '', public description: '') { }
 }

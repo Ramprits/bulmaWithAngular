@@ -1,24 +1,22 @@
-<div class="box">
-  <section class="section">
-    <div class="columns">
-      <div class="column" *ngFor="let fruit of fruits">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-medium is-4by3">
-              <img src="assets/fruitImages/{{fruit?.path}}" alt="{{fruit.title}}">
-            </figure>
+<section class="section container">
+  <div class="columns" *ngFor="let fruit of fruits">
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-medium is-4by3" *ngIf="fruit.path">
+            <img src="assets/fruitImages/{{fruit?.path}}" alt="{{fruit.title}}">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media-content">
+            <p class="title is-4">{{fruit.title}}</p>
           </div>
-          <div class="card-content">
-            <div class="media-content">
-              <p class="title is-4">{{fruit.title}}</p>
-            </div>
-            <div class="content">
-              {{fruit.description}}
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-            </div>
+          <div class="content">
+            {{fruit.description}}
+            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
