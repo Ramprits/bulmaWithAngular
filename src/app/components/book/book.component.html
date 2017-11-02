@@ -1,6 +1,6 @@
 <p-panel header="Book List">
-  <p-dataTable [value]="books" selectionMode="single" [(selection)]="selectedBook" (onRowSelect)="onRowSelect($event)" [paginator]="true"
-    rows="15" [responsive]="true">
+  <p-dataTable [value]="books" selectionMode="single" [(selection)]="selectedBook" [contextMenu]="cm" (onRowSelect)="onRowSelect($event)"
+    [paginator]="true" rows="15" [responsive]="true">
     <p-column field="Name" header="Name" [sortable]="true"></p-column>
     <p-column field="Description" header="Description" [sortable]="true"></p-column>
     <p-column field="CreatedDate" header="Created Date" [sortable]="true"></p-column>
@@ -11,6 +11,8 @@
     </p-footer>
   </p-dataTable>
 </p-panel>
+
+<p-contextMenu #cm [model]="items"></p-contextMenu>
 
 <p-dialog header="Book Details" [(visible)]="displayDialog" [responsive]="true" [width]="500" [height]="300">
   <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="book">

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from './book.service';
 import { IBook, Book } from './book';
+import { MenuItem } from 'primeng/primeng';
+import { Message } from 'primeng/components/common/message';
 
 @Component({
   selector: 'b-book',
@@ -8,6 +10,15 @@ import { IBook, Book } from './book';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
+  msgs: Message[];
+
+  deleteBook(book: IBook): any {
+    alert(book.Name);
+  }
+  viewBook(book: IBook): any {
+    alert(book.Name);
+  }
+  items: MenuItem[];
   books: IBook[];
   selectedBook: IBook;
   newBook: boolean;
@@ -16,6 +27,10 @@ export class BookComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
+    this.items = [
+      { label: 'View', icon: 'fa-search', command: (event) => this.viewBook(this.selectedBook) },
+      { label: 'Delete', icon: 'fa-close', command: (event) => this.deleteBook(this.selectedBook) }
+    ];
     this.bookService.getBooks().subscribe(book => { this.books = book },
       (err) => {
         console.error(err),
