@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
 import { MenuModule } from 'primeng/primeng';
 import { PanelModule } from 'primeng/primeng';
@@ -35,21 +36,28 @@ import { GrowlModule } from 'primeng/primeng';
 import { DragDropModule } from 'primeng/primeng';
 import { GalleriaModule } from 'primeng/primeng';
 
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookComponent } from './components/book/book.component';
 import { BookService } from './components/book/book.service';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment.prod';
+import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BookComponent
+    BookComponent,
+    FielderrorsComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -84,7 +92,9 @@ import { BookService } from './components/book/book.service';
     ConfirmDialogModule,
     GrowlModule,
     DragDropModule,
-    GalleriaModule
+    GalleriaModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence()
   ],
   providers: [BookService],
   bootstrap: [AppComponent]

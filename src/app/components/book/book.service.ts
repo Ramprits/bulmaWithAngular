@@ -8,10 +8,8 @@ import { IBook } from './book';
 
 @Injectable()
 export class BookService {
-  baseUrl = '/api/books';
-  baseStatesUrl = '/api/states';
+  baseUrl = 'assets/data/book.json';
   constructor(private http: HttpClient) {
-
   }
   getBooks(): Observable<IBook[]> {
     return this.http.get<IBook[]>(this.baseUrl)
@@ -25,8 +23,6 @@ export class BookService {
     if (error.error instanceof Error) {
       const errMessage = error.error.message;
       return Observable.throw(errMessage);
-      // Use the following instead if using lite-server
-      // return Observable.throw(err.text() || 'backend server error');
     }
     return Observable.throw(error || 'ASP.NET Core server error');
   }

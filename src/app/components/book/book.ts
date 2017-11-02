@@ -5,3 +5,11 @@ export interface IBook {
     CreatedDate: string;
     AuthorId: string;
 }
+
+export class Book {
+    BookId?: '';
+    Name?: '';
+    Description?: '';
+    CreatedDate?: '';
+    AuthorId?: '';
+}
