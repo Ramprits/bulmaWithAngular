@@ -1,0 +1,37 @@
+[
+  {
+    "BookId": "f3585be7-687a-4887-98f8-32936e3d3196",
+    "Name": "Dorothy Kilner",
+    "Description": "Dorothy Kilner published anonymously at first and then under the successive pseudonyms of M. P. and Mary Pelham, in line with general practice for female authors in that period. \"M. P.\" may have referred to her home town of Maryland Point. Both she and her sister-in-law were published by the London firm of John Marshall.",
+    "CreatedDate": "2017-11-02",
+    "AuthorId": "7b58bef5-dda9-4cc7-a02a-948f75ccd981"
+  },
+  {
+    "BookId": "4d2b84ae-f60f-45ba-adc8-5677e4dff963",
+    "Name": "A Little Pretty Pocket-Book",
+    "Description": "It is a striking and fielding team game, which involves hitting a small hard leather cased ball with a round wooden or metal bat and then running around 4 bases in order to score",
+    "CreatedDate": "2017-11-02",
+    "AuthorId": "4e337e69-a6f7-4388-bdc1-20aefb3d0af8"
+  },
+  {
+    "BookId": "e20fb0f9-8a46-44ec-a230-9303683dfd08",
+    "Name": "Hymns for the Amusement of Children",
+    "Description": "In essence, the Hymns for the Amusement of Children is intended to teach children the specific virtues that make up the subject matter of the work.[13] While trying to accomplish this goal, Smart emphasizes the joy of creation and Christ's sacrifice that allowed for future salvation. However, he didn't just try to spread joy, but structured his poems to treat valuable lessons about morality; his subjects begin with the three Theological Virtues (Faith, Hope, and Charity), then the four Cardinal Virtues (Prudence, Justice, Temperance, and Fortitude) and adds Mercy. The next six hymns deal with Christian duties and are followed by ten hymns on the Gospels. The final works introduce the miscellaneous Christian virtues that were necessary to complete Christopher's original self-proclaimed \"plan to make good girls and boys.\"[14]",
+    "CreatedDate": "2017-11-02",
+    "AuthorId": "7b58bef5-dda9-4cc7-a02a-948f75ccd981"
+  },
+  {
+    "BookId": "15b3ff4c-684e-42c3-910c-cd7c9a0e9928",
+    "Name": "The Governess, or The Little Female Academy",
+    "Description": "The opening of the novel illustrates how Mrs Teachum's school came into being. She was married to a man that enjoyed 'improving' his wife by educating her, and Mrs Teachum had a disposition towards pleasing her husband, and received his instructions with enthusiasm. When her husband died, he was happy to leave his children in the care of his well educated wife. It was not to be. Within 12 months of the loss of her husband, Mrs Teachum would also suffer the loss of both of her children to fever. During this time, the banker in possession of her money would go bankrupt, leaving Mrs Teachum without her expected support, and in need of income. \"Therefore, by the advice of all her Friends, she undertook what she was so well qualified for; namely, the education of children.\" [3]",
+    "CreatedDate": "2017-11-02",
+    "AuthorId": "7b58bef5-dda9-4cc7-a02a-948f75ccd981"
+  },
+  {
+    "BookId": "738ec292-93b3-4211-a1e5-f234d4597e3f",
+    "Name": "Divine Songs Attempted in Easy Language for the Use of Children",
+    "Description": "The book includes a woodcut of stool-ball among other period games, and includes a rhyme entitled \"Base-Ball.\" This is the first known reference to \"base-ball\" or \"baseball\" in print,[2] though it actually meant the game rounders, an ancestor of modern baseball. Of baseball's English origin: \"The game of Rounders has been played in England since Tudor Times, with the earliest reference being in 1744 in \"A Little Pretty Pocketbook\" where it is called baseball.\"[4][5] \"It is a striking and fielding team game, which involves hitting a small hard leather cased ball with a round wooden or metal bat and then running around 4 bases in order to score.\"[6]",
+    "CreatedDate": "2017-11-02",
+    "AuthorId": "4e337e69-a6f7-4388-bdc1-20aefb3d0af8"
+  }
+]

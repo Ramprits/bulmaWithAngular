@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { MenuModule } from 'primeng/primeng';
 import { PanelModule } from 'primeng/primeng';
 import { ChartModule } from 'primeng/primeng';
@@ -38,17 +39,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookComponent } from './components/book/book.component';
+import { BookService } from './components/book/book.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MenuModule,
     PanelModule,
     ChartModule,
@@ -81,7 +86,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DragDropModule,
     GalleriaModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
