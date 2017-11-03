@@ -47,6 +47,9 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment.prod';
 import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { CustomerService } from './components/customer/customer.service';
+import { CustomerDetailComponent } from './components/customer/customer-detail/customer-detail.component';
 
 
 @NgModule({
@@ -55,7 +58,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HomeComponent,
     BookComponent,
     FielderrorsComponent,
-    DashboardComponent
+    DashboardComponent,
+    CustomerComponent,
+    CustomerDetailComponent
   ],
   imports: [
     FormsModule,
@@ -98,7 +103,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence()
   ],
-  providers: [BookService],
+  providers: [BookService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
