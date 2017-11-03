@@ -18,11 +18,17 @@ export class BookComponent implements OnInit {
   viewBook(book: IBook): any {
     alert(book.Name);
   }
+  // tslint:disable-next-line:member-ordering
   items: MenuItem[];
+  // tslint:disable-next-line:member-ordering
   books: IBook[];
+  // tslint:disable-next-line:member-ordering
   selectedBook: IBook;
+  // tslint:disable-next-line:member-ordering
   newBook: boolean;
+  // tslint:disable-next-line:member-ordering
   book: Book = new PrimeBook();
+  // tslint:disable-next-line:member-ordering
   displayDialog: boolean;
   constructor(private bookService: BookService) { }
 
@@ -34,8 +40,9 @@ export class BookComponent implements OnInit {
     this.bookService.getBooks().subscribe(book => { this.books = book },
       (err) => {
         console.error(err),
-          () => { console.log('Sucessfully loaded...') }
-      })
+          // tslint:disable-next-line:no-unused-expression
+          () => { console.log('Sucessfully loaded...'); };
+      });
   }
   onRowSelect(event) {
     this.newBook = false;
@@ -53,8 +60,9 @@ export class BookComponent implements OnInit {
     return this.books.indexOf(this.selectedBook);
   }
   cloneCar(c: Book): Book {
-    let book = new PrimeBook();
-    for (let prop in c) {
+    const book = new PrimeBook();
+    // tslint:disable-next-line:forin
+    for (const prop in c) {
       book[prop] = c[prop];
     }
     return book;

@@ -46,6 +46,7 @@ import { BookService } from './components/book/book.service';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment.prod';
 import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
     AppComponent,
     HomeComponent,
     BookComponent,
-    FielderrorsComponent
+    FielderrorsComponent,
+    DashboardComponent
   ],
   imports: [
     FormsModule,

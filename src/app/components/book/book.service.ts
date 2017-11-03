@@ -9,11 +9,19 @@ import { IBook } from './book';
 @Injectable()
 export class BookService {
   baseUrl = 'assets/data/book.json';
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) {
   }
   getBooks(): Observable<IBook[]> {
-    return this.http.get<IBook[]>(this.baseUrl)
+    return this.httpClient.get<IBook[]>(this.baseUrl)
       .map((books: IBook[]) => {
+        return books;
+      })
+      .catch(this.handleError);
+  }
+
+  getBook(bookId: IBook) {
+    return this.httpClient.get(this.baseUrl + `/` + `${bookId.BookId}`)
+      .map((books: IBook) => {
         return books;
       })
       .catch(this.handleError);
