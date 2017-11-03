@@ -1,0 +1,66 @@
+[
+  {
+    "FruitId": "0fa47504-1a09-4661-8fb4-1555ca168451",
+    "Name": "Lychee",
+    "Description": "A lychee (pronounced LEE-ji) is a tropical fruit in the genus Litchi. It comes from southern China. Since it is tropical, it will only grow in a warm, wet climate.",
+    "image": "250px-Lychee",
+    "IsActive": "1",
+    "CreatedDate": "2017-11-03"
+  },
+  {
+    "FruitId": "fadda159-8a75-4fca-ad1e-1abf9818a7ac",
+    "Name": "Apricot",
+    "Description": "Small to medium-sized tree, 8 to 12 metres (26 to 39 ft) tall, with a trunk up to 40 cm in diameter with spreading, dense canopy; leaves are shaped somewhat like a heart, with pointed tips, about 8 cm (3 inches) wide.",
+    "image": "240px-Apricots",
+    "IsActive": "1",
+    "CreatedDate": "2017-11-03"
+  },
+  {
+    "FruitId": "d9f86da5-df76-4ea8-ab92-1f8b3aa0a1d4",
+    "Name": "Pear",
+    "Description": "A pear is an edible fruit. Its shape is a teardrop. The flavor of pears is best when they are cool. They are juicy. Pears do not ripen well on trees. They can be soft in the center. They can be baked, canned, frozen, or eaten fresh. They can be made into jams, jellies or juice. They can also be made into pies and put into salads or baby food. They are eighty three percent water. It has a green, red, yellow, or brown skin. The pear originated from Europe, Africa and Asia. Pear trees grow in heavy soil.",
+    "image": "220px-Pears",
+    "IsActive": "1",
+    "CreatedDate": "2017-11-03"
+  },
+  {
+    "FruitId": "58a60176-e244-4eac-b527-58e6cb2395a8",
+    "Name": "Cherry",
+    "Description": "Cherry is a fruit that grows on a tree or a bush. It belongs to the genus Prunus. It is usually red, with a seed in the middle. It tastes slightly sour, and is often used to flavour cakes and ice cream, or is baked in a pie or cobbler. Cherries are also a good source of Vitamin B.",
+    "image": "250px-Cherries_summerland",
+    "IsActive": "1",
+    "CreatedDate": "2017-11-03"
+  },
+  {
+    "FruitId": "40bf0bed-1218-4fed-809e-6f06f34c60bf",
+    "Name": "Grape",
+    "Description": "Grapes are the fruit of a woody grape vine. Grapes can be eaten raw, or used for making wine, juice, and jelly/jam. Grapes come in different colours; red, purple, white, and green are some examples. Today, grapes can be seedless, by using machines to pit the fruit. Wild grapevines are often considered a nuisance weed, as they cover other plants with their usually rather aggressive growth.",
+    "image": "250px-Close_up_grapes",
+    "IsActive": "1",
+    "CreatedDate": "2017-11-03"
+  },
+  {
+    "FruitId": "14952b23-e5b0-4031-b88e-870977c3a242",
+    "Name": "Orange",
+    "Description": "An orange is a type of citrus fruit which people often eat. Oranges are a very good source of vitamins, especially vitamin C.[1] Orange juice is an important part of many people's breakfast. The \"sweet orange\", which is the kind that are most often eaten today, grew first in Asia but now grows in many parts of the world.",
+    "image": "200px-OrangeBloss_wb",
+    "IsActive": "1",
+    "CreatedDate": "2017-11-03"
+  },
+  {
+    "FruitId": "a9b73d24-7555-4b70-b921-9b84d40e9a85",
+    "Name": "Avocado",
+    "Description": "An avocado is a berry fruit. It has medium dark green or dark green bumpy or smooth skin depending on the variety.",
+    "image": "240px-Avocado_fruitnfoliage",
+    "IsActive": "1",
+    "CreatedDate": "2017-11-03"
+  },
+  {
+    "FruitId": "a7bf2137-8453-4f7c-9814-b66d187067b2",
+    "Name": "Kiwifruit",
+    "Description": "Kiwifruit (Actinidia deliciosa) is a fruit. It has an oval shape. It is green on the inside with small black seeds that can be eaten. The kiwi has furry brown skin that is edible but is usually removed. The skin is relatively thin. The kiwi is native to South China.",
+    "image": "Kiwi_(Actinidia_chinensis)_1_Luc_Viatour",
+    "IsActive": "1",
+    "CreatedDate": "2017-11-03"
+  }
+]

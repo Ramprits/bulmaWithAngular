@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 // tslint:disable-next-line:max-line-length
-import { HomeComponent, BookComponent, BookService, DashboardComponent, CustomerComponent, CustomerService, CustomerDetailComponent } from './components/index';
+import { HomeComponent, BookComponent, FruitService, FruitComponent, BookService, DashboardComponent, CustomerComponent, CustomerService, CustomerDetailComponent } from './components/index';
 // tslint:disable-next-line:max-line-length
 import { MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule, InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, DropdownModule, MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule, TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule, ConfirmationService, ConfirmDialogModule, GrowlModule, DragDropModule, GalleriaModule } from 'primeng/primeng';
 
@@ -25,7 +25,8 @@ import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
     FielderrorsComponent,
     DashboardComponent,
     CustomerComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    FruitComponent
   ],
   imports: [
     FormsModule,
@@ -68,7 +69,7 @@ import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence()
   ],
-  providers: [BookService, CustomerService],
+  providers: [BookService, CustomerService, FruitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

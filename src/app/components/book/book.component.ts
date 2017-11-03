@@ -37,7 +37,7 @@ export class BookComponent implements OnInit {
       { label: 'View', icon: 'fa-search', command: (event) => this.viewBook(this.selectedBook) },
       { label: 'Delete', icon: 'fa-close', command: (event) => this.deleteBook(this.selectedBook) }
     ];
-    this.bookService.getBooks().subscribe(book => { this.books = book },
+    this.bookService.getBooks().subscribe(book => { this.books = book; },
       (err) => {
         console.error(err),
           // tslint:disable-next-line:no-unused-expression

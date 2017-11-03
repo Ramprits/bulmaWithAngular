@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent, BookComponent, CustomerComponent, CustomerDetailComponent, DashboardComponent } from './components/index';
+// tslint:disable-next-line:max-line-length
+import { HomeComponent, BookComponent, CustomerComponent, CustomerDetailComponent, DashboardComponent, FruitComponent } from './components/index';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'books/:bookId', component: BookComponent },
   { path: 'customers', component: CustomerComponent },
   { path: 'customers/:CustomerId', component: CustomerDetailComponent },
+  { path: 'fruits', component: FruitComponent },
 ];
 
 @NgModule({
