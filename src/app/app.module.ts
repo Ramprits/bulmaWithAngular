@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 // tslint:disable-next-line:max-line-length
-import { HomeComponent, BookComponent, FruitService, FruitComponent, BookService, DashboardComponent, CustomerComponent, CustomerService, CustomerDetailComponent } from './components/index';
+import { HomeComponent, BookComponent, FruitService, FruitComponent, BookService, DashboardComponent, CustomerComponent, CustomerService, CustomerDetailComponent, AddCustomerComponent } from './components/index';
 // tslint:disable-next-line:max-line-length
 import { MenuModule, PanelModule, ChartModule, OverlayPanelModule, InputTextModule, ButtonModule, InputMaskModule, InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, DropdownModule, MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule, TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule, ConfirmationService, ConfirmDialogModule, GrowlModule, DragDropModule, GalleriaModule } from 'primeng/primeng';
 
@@ -30,7 +30,8 @@ import { ProductComponent } from './components/product/product.component';
     CustomerComponent,
     CustomerDetailComponent,
     FruitComponent,
-    ProductComponent
+    ProductComponent,
+    AddCustomerComponent
   ],
   imports: [
     HttpModule,

@@ -4,6 +4,7 @@ export * from '../components/book/book.service';
 export * from '../components/customer/customer.service';
 export * from '../components/book/book';
 export * from '../components/customer/customer.component';
+export * from '../components/customer/add-customer/add-customer.component';
 export * from '../components/customer/customer-detail/customer-detail.component';
 export * from '../components/customer/customer';
 export * from '../components/dashboard/dashboard.component';
