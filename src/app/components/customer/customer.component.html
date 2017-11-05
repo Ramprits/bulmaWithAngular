@@ -1,6 +1,6 @@
 <p-panel header="Customers">
-  <table style="border: 1px solid black; width: 100%;">
-    <tr style="color: white;background-color: blue;">
+  <table class="table">
+    <tr>
       <td>Company Name</td>
       <td>Contact Name</td>
       <td>Contact Title</td>
@@ -8,11 +8,12 @@
     </tr>
     <tr *ngFor="let customer of customers">
       <td>
-        <a [routerLink]="['/customers', customer.CustomerId]">{{customer.CompanyName}}</a>
+        <a [routerLink]="['/customers', customer.customerId]">
+          {{customer.companyName}}</a>
       </td>
-      <td>{{customer.ContactName}}</td>
-      <td>{{customer.ContactTitle}}</td>
-      <td>{{customer.Address}}</td>
+      <td>{{customer.contactName}}</td>
+      <td>{{customer.contactTitle}}</td>
+      <td>{{customer.address}}</td>
     </tr>
   </table>
 </p-panel>

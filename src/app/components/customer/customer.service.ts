@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CustomerService {
-  _baseUrl = 'assets/data/customers.json';
+  _baseUrl = 'https://localhost:44366/api/customers';
   constructor(private httpClient: HttpClient) { }
 
   getCustomers(): Observable<Customer[]> {
@@ -15,7 +15,7 @@ export class CustomerService {
       }).catch(this.handleError);
   }
 
-  getCustomer(customerId: Customer): Observable<Customer> {
+  getCustomer(customerId: any): Observable<Customer> {
     return this.httpClient.get(this._baseUrl + '/' + `${customerId.CustomerId}`)
       .map((customer: Customer) => {
         return customer;

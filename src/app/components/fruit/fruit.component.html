@@ -1,7 +1,10 @@
-<div class="ui-g">
-  <div class="ui-g-6 ui-md-3" *ngFor="let fruit of fruits">
-    <p-panel header="{{fruit.Name}}">
-      <img src="assets/images/{{fruit.image}}.jpg">
-    </p-panel>
+<div class="row">
+  <div class="col-md-4" *ngFor="let fruit of fruits">
+    <div class="card">
+      <img class="card-img-top img-fluid" src="assets/images/{{fruit.image}}.jpg" alt="">
+      <div class="card-body">
+        <h4 class="card-title">{{fruit.Name}}</h4>
+      </div>
+    </div>
   </div>
 </div>

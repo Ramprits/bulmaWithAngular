@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from '../customer.service';
+import { CustomerNewService } from '../customer-new.service';
 import { ActivatedRoute } from '@angular/router';
 import { Customer } from '../customer';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'b-customer-detail',
@@ -9,18 +10,13 @@ import { Customer } from '../customer';
   styleUrls: ['./customer-detail.component.scss']
 })
 export class CustomerDetailComponent implements OnInit {
-  customer: Customer;
-
-  constructor(private route: ActivatedRoute, private customerService: CustomerService) { }
-
+  customer: any;
+  private sub: Subscription;
+  constructor(private route: ActivatedRoute,
+    private customerService: CustomerNewService) { }
   ngOnInit() {
-    const CustomerId = this.route.snapshot.params['CustomerId'];
-    this.getCustomer(CustomerId);
+    this.customerService.getCustomer(this.route.snapshot.params['customerId'])
+      .subscribe(customer => { this.customer = customer; });
   }
-  getCustomer(CustomerId) {
-    this.customerService.getCustomer(CustomerId)
-      .subscribe((customer: Customer) => { this.customer = customer; },
-      (err) => { console.error(err); },
-      () => { console.log('Sucessfully loaded !!'); });
-  }
+
 }

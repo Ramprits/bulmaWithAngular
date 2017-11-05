@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 // tslint:disable-next-line:max-line-length
 import { HomeComponent, BookComponent, FruitService, FruitComponent, BookService, DashboardComponent, CustomerComponent, CustomerService, CustomerDetailComponent } from './components/index';
 // tslint:disable-next-line:max-line-length
-import { MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule, InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, DropdownModule, MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule, TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule, ConfirmationService, ConfirmDialogModule, GrowlModule, DragDropModule, GalleriaModule } from 'primeng/primeng';
+import { MenuModule, PanelModule, ChartModule, OverlayPanelModule, InputTextModule, ButtonModule, InputMaskModule, InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, DropdownModule, MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule, TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule, ConfirmationService, ConfirmDialogModule, GrowlModule, DragDropModule, GalleriaModule } from 'primeng/primeng';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment.prod';
 import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
+import { CustomerNewService } from './components/customer/customer-new.service';
+import { HttpModule } from '@angular/http';
+import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
@@ -26,9 +29,11 @@ import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
     DashboardComponent,
     CustomerComponent,
     CustomerDetailComponent,
-    FruitComponent
+    FruitComponent,
+    ProductComponent
   ],
   imports: [
+    HttpModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
@@ -37,6 +42,7 @@ import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
     HttpClientModule,
     MenuModule,
     PanelModule,
+    OverlayPanelModule,
     ChartModule,
     InputTextModule,
     ButtonModule,
@@ -69,7 +75,7 @@ import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence()
   ],
-  providers: [BookService, CustomerService, FruitService],
+  providers: [BookService, CustomerService, FruitService, CustomerNewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

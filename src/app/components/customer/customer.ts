@@ -1,8 +1,8 @@
 export class Customer {
-    public CustomerId?: '';
-    public CompanyName?: '';
-    public ContactName?: '';
-    public ContactTitle?: '';
-    public Address?: '';
-    public IsActive?: true;
+    public customerId?: any;
+    public companyName?: '';
+    public contactName?: '';
+    public contactTitle?: '';
+    public address?: '';
+    public isActive?: true;
 }
