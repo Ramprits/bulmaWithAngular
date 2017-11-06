@@ -9,7 +9,7 @@ import { TrackerError } from '../../core/TrackerError';
 
 @Injectable()
 export class CustomerNewService {
-  _baseUrl = 'assets/data/customers.json';
+  _baseUrl = 'https://localhost:44366/api/customers';
   constructor(private http: Http) { }
   getCustomers(): Observable<Customer[]> {
     return this.http.get(this._baseUrl)
@@ -27,7 +27,6 @@ export class CustomerNewService {
     return this.http.post(this._baseUrl, customer)
       .map((res: Response) => {
         const data = res.json();
-        console.log('insertCustomer status: ' + data.status);
         return data.customer;
       }).catch(this.handleError);
   }
