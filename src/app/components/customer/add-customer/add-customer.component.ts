@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AddCustomerComponent implements OnInit {
   addCustomer: FormGroup;
+  updateHeading = 'Add new customer';
   constructor(private fb: FormBuilder, private customerService: CustomerNewService, private router: Router) { }
   customer: Customer = {
     companyName: '',

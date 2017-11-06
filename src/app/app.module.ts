@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 // tslint:disable-next-line:max-line-length
 import { HomeComponent, BookComponent, FruitService, FruitComponent, BookService, DashboardComponent, CustomerComponent, CustomerService, CustomerDetailComponent, AddCustomerComponent } from './components/index';
 // tslint:disable-next-line:max-line-length
-import { MenuModule, PanelModule, ChartModule, OverlayPanelModule, InputTextModule, ButtonModule, InputMaskModule, InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, DropdownModule, MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule, TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule, ConfirmationService, ConfirmDialogModule, GrowlModule, DragDropModule, GalleriaModule } from 'primeng/primeng';
+import { MenuModule, PanelModule, ChartModule, CheckboxModule, OverlayPanelModule, InputTextModule, ButtonModule, InputMaskModule, InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, DropdownModule, MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule, TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule, ConfirmationService, ConfirmDialogModule, GrowlModule, DragDropModule, GalleriaModule } from 'primeng/primeng';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +35,7 @@ import { ProductComponent } from './components/product/product.component';
   ],
   imports: [
     HttpModule,
+    CheckboxModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,

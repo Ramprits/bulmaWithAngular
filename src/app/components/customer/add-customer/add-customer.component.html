@@ -1,36 +1,41 @@
-<p-panel header="Add Customer">
-  <div class="container">
-    <form [formGroup]="addCustomer" (ngSubmit)="onSubmit(addCustomer.value)">
-      <div class="form-group row">
-        <label for="companyName" class="col-sm-6 col-form-label">Company Name</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" formControlName="companyName" name="companyName" id="companyName" placeholder="">
-        </div>
+<p-panel header="{{updateHeading}}">
+  <form [formGroup]="addCustomer" (ngSubmit)="onSubmit(addCustomer.value)" style="width: 50%;">
+    <div class="form-group row">
+      <label for="companyName" class="col-sm-3 col-form-label">Company Name</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="companyName" name="companyName" id="companyName" placeholder="">
       </div>
-      <div class="form-group row">
-        <label for="contactName" class="col-sm-6 col-form-label">Contact Name</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" formControlName="contactName" name="contactName" id="contactName" placeholder="">
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="contactName" class="col-sm-3 col-form-label">Contact Name</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="contactName" name="contactName" id="contactName" placeholder="">
       </div>
-      <div class="form-group row">
-        <label for="contactTitle" class="col-sm-6 col-form-label">Contact Title</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" formControlName="contactTitle" name="contactTitle" id="contactTitle" placeholder="">
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="contactTitle" class="col-sm-3 col-form-label">Contact Title</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="contactTitle" name="contactTitle" id="contactTitle" placeholder="">
       </div>
-      <div class="form-group row">
-        <label for="address" class="col-sm-6 col-form-label">Address</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" formControlName="address" name="address" id="address" placeholder="">
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="address" class="col-sm-3 col-form-label">Address</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="address" name="address" id="address" placeholder="">
       </div>
-      <div class="form-group row">
-        <div class="offset-sm-10 col-sm-2">
-          <button type="submit" class="btn btn-primary">Save</button>
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="address" class="col-sm-3 col-form-label">Is Active</label>
+      <div class="col-sm-6">
+        <p-checkbox formControlName="isActive" binary="true"></p-checkbox>
       </div>
-    </form>
-  </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="offset-sm-7 col-sm-1">
+        <button pButton type="submit" label="Submit" [disabled]="!addCustomer.valid"></button>
+      </div>
+    </div>
+  </form>
   <p>Form value: {{ addCustomer.value | json }}</p>
 </p-panel>
