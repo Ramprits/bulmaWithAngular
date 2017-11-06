@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Customer } from './customer';
+import { HttpErrorResponse } from '@angular/common/http';
+import { TrackerError } from '../../core/TrackerError';
 
 @Injectable()
 export class CustomerNewService {
@@ -11,7 +13,8 @@ export class CustomerNewService {
   constructor(private http: Http) { }
   getCustomers(): Observable<Customer[]> {
     return this.http.get(this._baseUrl)
-      .map((response: Response) => response.json());
+      .map((response: Response) => response.json())
+      .catch(this.handleError);
   }
 
   getCustomer(customerId: Customer): Observable<Customer> {
@@ -29,19 +32,11 @@ export class CustomerNewService {
       }).catch(this.handleError);
   }
 
-  private handleError(error: any) {
-    console.error('server error:', error);
-    if (error instanceof Response) {
-      let errMessage = '';
-      try {
-        errMessage = error.json().error;
-      } catch (err) {
-        errMessage = error.statusText;
-      }
-      return Observable.throw(errMessage);
-      // Use the following instead if using lite-server
-      // return Observable.throw(err.text() || 'backend server error');
-    }
-    return Observable.throw(error || 'ASP.NET Core server error');
+  private handleError(error: HttpErrorResponse): Observable<TrackerError> {
+    const dataError = new TrackerError();
+    dataError.errorNumber = error.status;
+    dataError.message = error.statusText;
+    dataError.friendlyMessage = 'An error occurred retrieving data.';
+    return Observable.throw(dataError);
   }
 }

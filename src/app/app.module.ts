@@ -18,6 +18,7 @@ import { FielderrorsComponent } from './core/fielderrors/fielderrors.component';
 import { CustomerNewService } from './components/customer/customer-new.service';
 import { HttpModule } from '@angular/http';
 import { ProductComponent } from './components/product/product.component';
+import { LoggerService } from './core/index';
 
 
 @NgModule({
@@ -77,7 +78,7 @@ import { ProductComponent } from './components/product/product.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence()
   ],
-  providers: [BookService, CustomerService, FruitService, CustomerNewService],
+  providers: [BookService, CustomerService, FruitService, CustomerNewService, LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
