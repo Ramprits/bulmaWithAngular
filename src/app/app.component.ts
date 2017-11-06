@@ -39,7 +39,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       { label: 'Dashboard', icon: 'fa-home', routerLink: ['/dashboard'], command: (event) => handleSelected(event), visible: !this.menuVisible },
       { label: 'All Times', icon: 'fa-calendar', routerLink: ['/alltimes'], command: (event) => handleSelected(event), visible: this.menuVisible },
       // tslint:disable-next-line:max-line-length
-      { label: 'Books', icon: 'fa-clock-o', routerLink: ['/books'], command: (event) => handleSelected(event), visible: !this.menuVisible },
+      { label: 'Books', icon: 'fa-book', routerLink: ['/books'], command: (event) => handleSelected(event), visible: !this.menuVisible },
       { label: 'Customer', icon: 'fa-tasks', routerLink: ['/customers'], command: (event) => handleSelected(event), visible: !this.menuVisible },
       // tslint:disable-next-line:max-line-length
       { label: 'Employee', icon: 'fa-users', routerLink: ['/employees'], command: (event) => handleSelected(event), visible: !this.menuVisible },
