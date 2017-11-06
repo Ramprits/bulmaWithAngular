@@ -3,6 +3,7 @@ import { BookService } from './book.service';
 import { IBook, Book } from './book';
 import { MenuItem } from 'primeng/primeng';
 import { Message } from 'primeng/components/common/message';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'b-book',
@@ -30,7 +31,9 @@ export class BookComponent implements OnInit {
   book: Book = new PrimeBook();
   // tslint:disable-next-line:member-ordering
   displayDialog: boolean;
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private title: Title) {
+    this.title.setTitle('Book List');
+  }
 
   ngOnInit() {
     this.items = [

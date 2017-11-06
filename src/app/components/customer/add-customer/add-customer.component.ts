@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomerNewService } from '../customer-new.service';
 import { Customer } from '../customer';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'b-add-customer',
@@ -12,7 +13,12 @@ import { Router } from '@angular/router';
 export class AddCustomerComponent implements OnInit {
   addCustomer: FormGroup;
   updateHeading = 'Add new customer';
-  constructor(private fb: FormBuilder, private customerService: CustomerNewService, private router: Router) { }
+  constructor(private fb: FormBuilder,
+    private customerService: CustomerNewService,
+    private router: Router,
+    private title: Title) {
+    this.title.setTitle('Add Customer');
+  }
   customer: Customer = {
     companyName: '',
     contactName: '',

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from './customer';
 import { CustomerNewService } from './customer-new.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'b-customer',
@@ -9,7 +10,9 @@ import { CustomerNewService } from './customer-new.service';
 })
 export class CustomerComponent implements OnInit {
   customers: Customer[];
-  constructor(private customerService: CustomerNewService) { }
+  constructor(private customerService: CustomerNewService, private title: Title) {
+    this.title.setTitle('Customer List');
+  }
 
   ngOnInit() {
     this.customerService.getCustomers()
