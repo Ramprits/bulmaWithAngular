@@ -1,21 +1,23 @@
 <p-panel header="Customers">
-  <table class="table table-bordered">
-    <thead class="bg-primary text-light">
-      <tr class="text-left">
-        <td>Company Name</td>
-        <td>Contact Name</td>
-        <td>Contact Title</td>
-        <td>Address</td>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead class="bg-primary text-light">
+        <tr class="text-left">
+          <td>Company Name</td>
+          <td>Contact Name</td>
+          <td>Contact Title</td>
+          <td>Address</td>
+        </tr>
+      </thead>
+      <tr *ngFor="let customer of  (customers ? customers.slice(0,15): []); let i = index" class="text-left ">
+        <td>
+          <a [routerLink]="[ '/customers', customer.customerId] ">
+            {{customer.companyName}}</a>
+        </td>
+        <td>{{customer.contactName}}</td>
+        <td>{{customer.contactTitle}}</td>
+        <td>{{customer.address}}</td>
       </tr>
-    </thead>
-    <tr *ngFor="let customer of  (customers ? customers.slice(0,15): []); let i = index" class="text-left ">
-      <td>
-        <a [routerLink]="[ '/customers', customer.customerId] ">
-          {{customer.companyName}}</a>
-      </td>
-      <td>{{customer.contactName}}</td>
-      <td>{{customer.contactTitle}}</td>
-      <td>{{customer.address}}</td>
-    </tr>
-  </table>
+    </table>
+  </div>
 </p-panel>
