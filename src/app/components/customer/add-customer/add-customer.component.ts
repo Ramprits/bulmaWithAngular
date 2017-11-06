@@ -18,7 +18,7 @@ export class AddCustomerComponent implements OnInit {
     contactTitle: '',
     address: '',
     isActive: true
-  }
+  };
   ngOnInit() {
     this.addCustomer = this.fb.group({
       companyName: [this.customer.companyName, [Validators.required]],
@@ -30,7 +30,8 @@ export class AddCustomerComponent implements OnInit {
   }
   onSubmit(customer: Customer) {
     this.customerService.addCustomer(customer)
-      .subscribe((customer: Customer) => {
+      // tslint:disable-next-line:no-shadowed-variable
+      .subscribe(customer => {
         if (customer) {
           this.router.navigate(['/customers']);
         }

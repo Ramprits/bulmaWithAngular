@@ -1,12 +1,14 @@
 <p-panel header="Customers">
-  <table class="table">
-    <tr>
-      <td>Company Name</td>
-      <td>Contact Name</td>
-      <td>Contact Title</td>
-      <td>Address</td>
-    </tr>
-    <tr *ngFor="let customer of customers">
+  <table class="table table-bordered">
+    <thead class="bg-primary text-light">
+      <tr class="text-left">
+        <td>Company Name</td>
+        <td>Contact Name</td>
+        <td>Contact Title</td>
+        <td>Address</td>
+      </tr>
+    </thead>
+    <tr *ngFor="let customer of customers" class="text-left">
       <td>
         <a [routerLink]="['/customers', customer.customerId]">
           {{customer.companyName}}</a>

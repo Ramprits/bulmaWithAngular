@@ -39,12 +39,3 @@
     </div>
   </p-footer>
 </p-dialog>
-<hr>
-<div *ngFor="let book of books">
-  <a [routerLink]="['/books', book.BookId]">{{book.BookId}}</a>
-</div>
-
-<hr>
-<div *ngIf="book">
-  {{book.Name}}
-</div>

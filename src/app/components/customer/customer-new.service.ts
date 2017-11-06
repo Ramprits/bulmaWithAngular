@@ -7,7 +7,7 @@ import { Customer } from './customer';
 
 @Injectable()
 export class CustomerNewService {
-  _baseUrl = 'https://localhost:44366/api/customers';
+  _baseUrl = 'assets/data/customers.json';
   constructor(private http: Http) { }
   getCustomers(): Observable<Customer[]> {
     return this.http.get(this._baseUrl)
