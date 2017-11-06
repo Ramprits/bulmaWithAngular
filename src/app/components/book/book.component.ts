@@ -14,7 +14,10 @@ export class BookComponent implements OnInit {
   msgs: Message[];
 
   deleteBook(book: IBook): any {
-    alert(book.Name);
+    const index = this.findSelectedCarIndex();
+    this.books = this.books.filter((val, i) => i !== index);
+    this.book = null;
+    this.displayDialog = false;
   }
   viewBook(book: IBook): any {
     alert(book.Name);
