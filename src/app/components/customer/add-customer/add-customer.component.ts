@@ -30,10 +30,10 @@ export class AddCustomerComponent implements OnInit {
   };
   ngOnInit() {
     this.addCustomer = this.fb.group({
-      companyName: [this.customer.companyName, [Validators.required]],
-      contactName: [this.customer.contactName, [Validators.required]],
-      contactTitle: [this.customer.contactTitle, [Validators.required]],
-      address: [this.customer.address, [Validators.required]],
+      companyName: [this.customer.companyName, { updateOn: 'blur', validators: [Validators.required] }],
+      contactName: [this.customer.contactName, { updateOn: 'blur', validators: [Validators.required] }],
+      contactTitle: [this.customer.contactTitle, { updateOn: 'blur', validators: [Validators.required] }],
+      address: [this.customer.address, { updateOn: 'blur', validators: [Validators.required] }],
       isActive: this.customer.isActive
     });
   }
@@ -42,7 +42,12 @@ export class AddCustomerComponent implements OnInit {
       // tslint:disable-next-line:no-shadowed-variable
       .subscribe((customer: Customer) => {
         this.router.navigate(['/customers']);
-      
-      }, (err: any) => { console.log('There are some error'); });
+      }, (err: any) => {
+        this.logger.error('There are some problem');
+      });
+  }
+  cancel(event: Event) {
+    event.preventDefault();
+    this.router.navigate(['/customers']);
   }
 }

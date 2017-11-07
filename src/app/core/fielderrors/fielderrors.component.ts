@@ -9,7 +9,9 @@ import { FormGroup } from '@angular/forms';
 export class FielderrorsComponent implements OnInit {
 
   @Input('form') form: FormGroup;
+  // tslint:disable-next-line:no-input-rename
   @Input('field') fieldName: string;
+  // tslint:disable-next-line:no-input-rename
   @Input('nicename') niceName: string;
 
   constructor() { }
