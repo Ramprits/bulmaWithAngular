@@ -12,7 +12,12 @@ import { Title } from '@angular/platform-browser';
 })
 export class BookComponent implements OnInit {
   msgs: Message[];
-
+  items: MenuItem[];
+  books: IBook[];
+  selectedBook: IBook;
+  newBook: boolean;
+  book: Book = new PrimeBook();
+  displayDialog: boolean;
   deleteBook(book: IBook): any {
     const index = this.findSelectedCarIndex();
     this.books = this.books.filter((val, i) => i !== index);
@@ -22,18 +27,7 @@ export class BookComponent implements OnInit {
   viewBook(book: IBook): any {
     alert(book.Name);
   }
-  // tslint:disable-next-line:member-ordering
-  items: MenuItem[];
-  // tslint:disable-next-line:member-ordering
-  books: IBook[];
-  // tslint:disable-next-line:member-ordering
-  selectedBook: IBook;
-  // tslint:disable-next-line:member-ordering
-  newBook: boolean;
-  // tslint:disable-next-line:member-ordering
-  book: Book = new PrimeBook();
-  // tslint:disable-next-line:member-ordering
-  displayDialog: boolean;
+
   constructor(private bookService: BookService, private title: Title) {
     this.title.setTitle('Book List');
   }

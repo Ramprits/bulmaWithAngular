@@ -2,8 +2,8 @@
   <form [formGroup]="addCustomer" (ngSubmit)="onSubmit(addCustomer.value)">
     <div class="form-group row">
       <label for="companyName" class="col-sm-12 col-md-2 col-lg-2 col-form-label">Company Name</label>
-      <div class="col-sm-12 col-md-4 col-lg-3">
-        <input pInputText type="text" formControlName="companyName" name="companyName" id="companyName" placeholder="">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <input pInputText type="text" size="50" formControlName="companyName" name="companyName" id="companyName" placeholder="">
       </div>
       <div class="ui-sm-12 ui-md-4 col-lg-3">
         <b-fielderrors [form]="addCustomer" field="companyName" nicename="Company Name"> </b-fielderrors>
@@ -11,8 +11,8 @@
     </div>
     <div class="form-group row">
       <label for="contactName" class="col-sm-12 col-md-2 col-lg-2 col-form-label">Contact Name</label>
-      <div class="col-sm-12 col-md-4 col-lg-3">
-        <input pInputText type="text" formControlName="contactName" name="contactName" id="contactName" placeholder="">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <input pInputText type="text" size="50" formControlName="contactName" name="contactName" id="contactName" placeholder="">
       </div>
       <div class="ui-sm-12 ui-md-4 col-lg-3">
         <b-fielderrors [form]="addCustomer" field="contactName" nicename="Contact Name"> </b-fielderrors>
@@ -20,8 +20,8 @@
     </div>
     <div class="form-group row">
       <label for="contactTitle" class="col-sm-12 col-md-2 col-lg-2 col-form-label">Contact Title</label>
-      <div class="col-sm-12 col-md-4 col-lg-3">
-        <input pInputText type="text" formControlName="contactTitle" name="contactTitle" id="contactTitle" placeholder="">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <input pInputText type="text" size="50" formControlName="contactTitle" name="contactTitle" id="contactTitle" placeholder="">
       </div>
       <div class="ui-sm-12 ui-md-4 col-lg-3">
         <b-fielderrors [form]="addCustomer" field="contactTitle" nicename="Contact Title"> </b-fielderrors>
@@ -29,8 +29,8 @@
     </div>
     <div class="form-group row">
       <label for="address" class="col-sm-12 col-md-2 col-lg-2 col-form-label">Address</label>
-      <div class="col-sm-12 col-md-4 col-lg-3">
-        <input pInputText type="text" formControlName="address" name="address" id="address" placeholder="">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <input pInputText type="text" size="50" formControlName="address" name="address" id="address" placeholder="">
       </div>
       <div class="ui-sm-12 ui-md-4 col-lg-3">
         <b-fielderrors [form]="addCustomer" field="address" nicename="Address"> </b-fielderrors>
@@ -38,7 +38,7 @@
     </div>
     <div class="form-group row">
       <label for="address" class="col-sm-12 col-md-2 col-lg-2 col-form-label">Is Active</label>
-      <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="col-sm-12 col-md-6 col-lg-4">
         <p-checkbox formControlName="isActive" binary="true"></p-checkbox>
       </div>
     </div>

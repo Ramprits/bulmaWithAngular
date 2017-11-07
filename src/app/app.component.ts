@@ -51,7 +51,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.miniMenuItems = [];
     this.menuItems.forEach((item: MenuItem) => {
-      const miniItem = { icon: item.icon, routerLink: item.routerLink }
+      const miniItem = { icon: item.icon, routerLink: item.routerLink };
       this.miniMenuItems.push(miniItem);
     });
 
