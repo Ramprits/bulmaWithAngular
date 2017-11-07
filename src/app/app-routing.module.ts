@@ -5,15 +5,15 @@ import { HomeComponent, BookComponent, CustomerComponent, CustomerDetailComponen
 
 const routes: Routes = [
 
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'AddNewCustomer', component: AddCustomerComponent },
   { path: 'home', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'books', component: BookComponent },
   { path: 'books/:bookId', component: BookComponent },
-  { path: 'AddNewCustomer', component: AddCustomerComponent },
   { path: 'customers', component: CustomerComponent },
   { path: 'customers/:customerId', component: CustomerDetailComponent },
   { path: 'fruits', component: FruitComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'home' }
 
 ];
 
