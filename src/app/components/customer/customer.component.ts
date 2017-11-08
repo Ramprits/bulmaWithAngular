@@ -18,8 +18,8 @@ export class CustomerComponent implements OnInit {
   ngOnInit() {
     this.customerService.getCustomers()
       .subscribe((customers: Customer[]) => { this.customers = customers; },
-      (err) => console.error(this.logger.error('unable to fetch !'), err),
-      () => { this.logger.log('😅 💌'); });
+      (err) => console.error(this.logger.error(''), err),
+      () => { this.logger.log(''); });
   }
 
 }
