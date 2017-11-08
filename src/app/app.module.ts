@@ -17,6 +17,7 @@ import { CustomerNewService } from './components/customer/customer-new.service';
 import { HttpModule } from '@angular/http';
 import { LoggerService } from './core/index';
 import { Error404Component } from './shared/404.component';
+import { AuthorComponent, AuthorService } from './components/author/index';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { Error404Component } from './shared/404.component';
     FruitComponent,
     ProductComponent,
     AddCustomerComponent,
-    Error404Component
+    Error404Component,
+    AuthorComponent
   ],
   imports: [
     HttpModule,
@@ -77,7 +79,7 @@ import { Error404Component } from './shared/404.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence()
   ],
-  providers: [BookService, CustomerService, FruitService, CustomerNewService, LoggerService, ConfirmationService],
+  providers: [BookService, CustomerService, FruitService, CustomerNewService, LoggerService, ConfirmationService, AuthorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
