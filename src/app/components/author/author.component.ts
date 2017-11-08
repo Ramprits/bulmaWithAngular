@@ -27,7 +27,8 @@ export class AuthorComponent implements OnInit {
   ngOnInit() {
     this.getAuthors();
   }
-
+  Add() {
+  }
   getAuthors() {
     this.authorRef = this.afs.collection('authors');
     this.loading = true;
