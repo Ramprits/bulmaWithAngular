@@ -12,7 +12,7 @@
   </p-dataTable>
 </p-panel>
 <p-contextMenu #cm [model]="items"></p-contextMenu>
-<p-dialog header="Book Details" [(visible)]="displayDialog" [responsive]="true" [width]="500">
+<p-dialog header="Book Details" [(visible)]="displayDialog" [responsive]="true" modal="modal" [responsive]="true">
   <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="book">
     <div class="ui-grid-row">
       <div class="ui-grid-col-4">
@@ -34,8 +34,11 @@
 
   <p-footer>
     <div class="ui-dialog-buttonpane ui-helper-clearfix">
-      <button type="button" pButton icon="fa-close" label="Delete" class="ui-button-danger"></button>
-      <button type="button" pButton icon="fa-check" label="Save"></button>
+      <button type="button" pButton icon="fa-close" label="Delete" (click)="displayDialog=false" class="ui-button-danger"></button>
+      <button type="button" pButton icon="fa-check" label="Save" (click)="displayDialog=false"></button>
     </div>
   </p-footer>
 </p-dialog>
+
+<p-confirmDialog header="Delete" icon="fa fa-question-circle" width="500"></p-confirmDialog>
+<button type="text" hidden (click)="confirm()" pButton icon="fa-check" label="Confirm"></button>

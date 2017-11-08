@@ -4,6 +4,8 @@ import { IBook, Book } from './book';
 import { MenuItem } from 'primeng/primeng';
 import { Message } from 'primeng/components/common/message';
 import { Title } from '@angular/platform-browser';
+import { LoggerService } from '../../core/Logger.Service';
+import { ConfirmationService } from 'primeng/components/common/api';
 
 @Component({
   selector: 'b-book',
@@ -18,6 +20,7 @@ export class BookComponent implements OnInit {
   newBook: boolean;
   book: Book = new PrimeBook();
   displayDialog: boolean;
+
   deleteBook(book: IBook): any {
     const index = this.findSelectedCarIndex();
     this.books = this.books.filter((val, i) => i !== index);
@@ -28,7 +31,8 @@ export class BookComponent implements OnInit {
     alert(book.Name);
   }
 
-  constructor(private bookService: BookService, private title: Title) {
+  constructor(private bookService: BookService, private title: Title, private logger: LoggerService,
+    private confirmationService: ConfirmationService) {
     this.title.setTitle('Book List');
   }
 
@@ -39,16 +43,13 @@ export class BookComponent implements OnInit {
     ];
     this.bookService.getBooks().subscribe(book => { this.books = book; },
       (err) => {
-        console.error(err),
-          // tslint:disable-next-line:no-unused-expression
-          () => { console.log('Sucessfully loaded...'); };
-      });
+        this.logger.error(err);
+      }, () => { this.logger.log(''); });
   }
   onRowSelect(event) {
     this.newBook = false;
     this.book = this.cloneCar(event.data);
     this.displayDialog = true;
-    console.log(event.data);
   }
   showDialogToAdd() {
     this.newBook = true;
@@ -66,6 +67,15 @@ export class BookComponent implements OnInit {
       book[prop] = c[prop];
     }
     return book;
+  }
+
+  confirm() {
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to delete this book record?',
+      accept: () => {
+        // Actual logic to perform a confirmation
+      }
+    });
   }
 }
 

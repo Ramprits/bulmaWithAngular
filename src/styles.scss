@@ -11,6 +11,9 @@ body {
     background-color: #2F8EE5 !important;
     color: white !important;
   }
+  p-contextMenu >>> .ui-menuitem-active a {
+    background-color: #F15B2A !important;
+  }
   
   .ui-menu {
     width: auto !important;

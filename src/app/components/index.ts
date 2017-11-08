@@ -12,3 +12,4 @@ export * from '../components/home/home.component';
 export * from '../components/fruit/fruit.component';
 export * from '../components/fruit/fruit.service';
 export * from '../components/fruit/fruit';
+export * from '../components/product/product.component';
