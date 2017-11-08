@@ -30,10 +30,10 @@ export class AddCustomerComponent implements OnInit {
   };
   ngOnInit() {
     this.addCustomer = this.fb.group({
-      companyName: [this.customer.companyName, { updateOn: 'blur', validators: [Validators.required] }],
-      contactName: [this.customer.contactName, { updateOn: 'blur', validators: [Validators.required] }],
-      contactTitle: [this.customer.contactTitle, { updateOn: 'blur', validators: [Validators.required] }],
-      address: [this.customer.address, { updateOn: 'blur', validators: [Validators.required] }],
+      companyName: [this.customer.companyName, [Validators.required, Validators.minLength(4)]],
+      contactName: [this.customer.contactName, [Validators.required, Validators.minLength(4)]],
+      contactTitle: [this.customer.contactTitle, [Validators.required, Validators.minLength(4)]],
+      address: [this.customer.address, [Validators.required, Validators.minLength(4)]],
       isActive: this.customer.isActive
     });
   }

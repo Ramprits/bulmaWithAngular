@@ -5,6 +5,8 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IAuthor } from './author';
+import { LoggerService } from '../../core/Logger.Service';
+import { isDevMode } from '@angular/core';
 
 @Component({
   selector: 'b-author',
@@ -18,13 +20,18 @@ export class AuthorComponent implements OnInit {
 
   constructor(private title: Title,
     private employeeService: AuthorService,
-    private afs: AngularFirestore,
+    private afs: AngularFirestore, private loggerService: LoggerService,
     public fb: FormBuilder, private router: Router
   ) {
     this.title.setTitle('Author');
   }
 
   ngOnInit() {
+    if (isDevMode()) {
+      console.log('👋 Development!');
+    } else {
+      console.log('💪 Production!');
+    }
     this.getAuthors();
   }
   Add() {
@@ -38,9 +45,9 @@ export class AuthorComponent implements OnInit {
           const data = a.payload.doc.data() as IAuthor;
           const id = a.payload.doc.id;
           return { id, data };
-
-        }, (error) => { console.error('There are some : ', { error }); });
+        }, (error: any) => { this.loggerService.error(error); });
       });
+    this.loggerService.log('');
     this.loading = false;
   }
 
