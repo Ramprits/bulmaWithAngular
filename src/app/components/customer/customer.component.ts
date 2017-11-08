@@ -19,7 +19,7 @@ export class CustomerComponent implements OnInit {
     this.customerService.getCustomers()
       .subscribe((customers: Customer[]) => { this.customers = customers; },
       (err) => console.error(this.logger.error('unable to fetch !'), err),
-      () => { this.logger.log('sucessfully !'); });
+      () => { this.logger.log('😅 💌'); });
   }
 
 }

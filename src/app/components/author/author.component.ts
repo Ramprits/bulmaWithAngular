@@ -21,7 +21,7 @@ export class AuthorComponent implements OnInit {
     private afs: AngularFirestore,
     public fb: FormBuilder, private router: Router
   ) {
-    this.title.setTitle('Author List');
+    this.title.setTitle('Author');
   }
 
   ngOnInit() {
