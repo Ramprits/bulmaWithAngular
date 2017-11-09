@@ -10,8 +10,7 @@ import { isDevMode } from '@angular/core';
 
 @Component({
   selector: 'b-author',
-  templateUrl: './author.component.html',
-  styleUrls: ['./author.component.scss']
+  templateUrl: './author.component.html'
 })
 export class AuthorComponent implements OnInit, OnDestroy {
 

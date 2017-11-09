@@ -7,8 +7,7 @@ import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'b-customer-detail',
-  templateUrl: './customer-detail.component.html',
-  styleUrls: ['./customer-detail.component.scss']
+  templateUrl: './customer-detail.component.html'
 })
 export class CustomerDetailComponent implements OnInit {
   customer: any;

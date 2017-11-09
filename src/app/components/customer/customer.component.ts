@@ -6,8 +6,7 @@ import { LoggerService } from '../../core/Logger.Service';
 
 @Component({
   selector: 'b-customer',
-  templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.scss']
+  templateUrl: './customer.component.html'
 })
 export class CustomerComponent implements OnInit {
   customers: Customer[];

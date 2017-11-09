@@ -8,8 +8,7 @@ import { LoggerService } from '../../../core/Logger.Service';
 
 @Component({
   selector: 'b-add-customer',
-  templateUrl: './add-customer.component.html',
-  styleUrls: ['./add-customer.component.scss']
+  templateUrl: './add-customer.component.html'
 })
 export class AddCustomerComponent implements OnInit {
   addCustomer: FormGroup;

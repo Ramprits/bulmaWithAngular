@@ -3,8 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'b-fielderrors',
-  templateUrl: './fielderrors.component.html',
-  styleUrls: ['./fielderrors.component.scss']
+  templateUrl: './fielderrors.component.html'
 })
 export class FielderrorsComponent implements OnInit {
 
