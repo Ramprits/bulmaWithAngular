@@ -1,3 +1,6 @@
 <p-panel header="Home">
   Welcome to Home
+  <br>
+
+  <p-dropdown [options]="countries" [autofocus]="true" (onChange)="onChange($event)" [(ngModel)]="selectedCar" [filter]="true"></p-dropdown>
 </p-panel>

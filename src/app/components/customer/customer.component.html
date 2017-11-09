@@ -10,7 +10,7 @@
           <td>Address</td>
         </tr>
       </thead>
-      <tr *ngFor="let customer of  (customers ? customers.slice(0,15): []); let i = index" class="text-left ">
+      <tr *ngFor="let customer of  (customers ? customers.slice(0,100): []); let i = index" class="text-left ">
         <td>
           <a [routerLink]="[ '/customers', customer.customerId] ">
             {{customer.companyName}}</a>

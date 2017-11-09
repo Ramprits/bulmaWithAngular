@@ -27,6 +27,7 @@ import { HttpModule } from '@angular/http';
 import { LoggerService } from './core/index';
 import { Error404Component } from './shared/404.component';
 import { AuthorComponent, AuthorService } from './components/author/index';
+import { CountryService } from './core/country.service';
 Raven
   .config('https://f88b3d205a9042d5b1a069be1baf9c31@sentry.io/241753')
   .install();
@@ -61,7 +62,7 @@ export function provideErrorHandler() {
 
   providers: [{ provide: ErrorHandler, useFactory: provideErrorHandler },
     BookService, CustomerService, FruitService, CustomerNewService,
-    LoggerService, ConfirmationService, AuthorService],
+    LoggerService, ConfirmationService, AuthorService, CountryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
