@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { AuthorService } from './author.service';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
@@ -13,7 +13,8 @@ import { isDevMode } from '@angular/core';
   templateUrl: './author.component.html',
   styleUrls: ['./author.component.scss']
 })
-export class AuthorComponent implements OnInit {
+export class AuthorComponent implements OnInit, OnDestroy {
+
   authors: any;
   authorRef: AngularFirestoreCollection<IAuthor>;
   loading: boolean;
@@ -29,12 +30,13 @@ export class AuthorComponent implements OnInit {
   ngOnInit() {
     if (isDevMode()) {
       console.log('👋 Development!');
+      this.getAuthors();
     } else {
       console.log('💪 Production!');
     }
-    this.getAuthors();
   }
   Add() {
+    confirm('Are you sure want to add author');
   }
   getAuthors() {
     this.authorRef = this.afs.collection('authors');
@@ -50,7 +52,9 @@ export class AuthorComponent implements OnInit {
     this.loggerService.log('');
     this.loading = false;
   }
-
+  ngOnDestroy(): void {
+    console.log('Method not implemented.');
+  }
 }
 interface EmployeeId extends IAuthor {
   id: string;
