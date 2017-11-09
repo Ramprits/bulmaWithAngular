@@ -2,5 +2,6 @@
   Welcome to Home
   <br>
 
-  <p-dropdown [options]="countries" [autofocus]="true" (onChange)="onChange($event)" [(ngModel)]="selectedCar" [filter]="true"></p-dropdown>
+  <p-dropdown [options]="countries" [autofocus]="true" [style]="{'width':'180px'}" (onChange)="onChange($event)" [(ngModel)]="selectedCar"
+    [filter]="true"></p-dropdown>
 </p-panel>
