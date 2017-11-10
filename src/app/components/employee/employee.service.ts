@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ConfigService } from '../../shared/config.service';
-import { IEmployee } from './employee';
+import { IEmployee, IEmployeeResponse } from './employee';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import { TrackerError } from '../../core/TrackerError';
+import { LoggerService } from '../../core/Logger.Service';
 
 @Injectable()
 export class EmployeeService {
   private baseUrl = '';
-  constructor(private httpClient: HttpClient, private utilService: ConfigService) {
+  constructor(private httpClient: HttpClient, private utilService: ConfigService, private loggerService: LoggerService) {
     this.baseUrl = this.utilService.getApiURI();
   }
 
@@ -17,7 +21,13 @@ export class EmployeeService {
       return employee;
     }).catch(this.handleError);
   }
-
+  insertEmployee(employee: IEmployee): Observable<IEmployee | TrackerError> {
+    return this.httpClient.post<IEmployeeResponse>(this.baseUrl + `/Employees`, employee)
+      .map((data) => {
+        this.loggerService.error('OOOPS');
+        return data.employee;
+      });
+  }
   private handleError(error: HttpErrorResponse): Observable<TrackerError> {
     const dataError = new TrackerError();
     dataError.errorNumber = error.status;

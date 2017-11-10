@@ -6,3 +6,8 @@ export interface IEmployee {
     gender: string;
     address: string;
 }
+
+export interface IEmployeeResponse {
+    status: boolean;
+    employee: IEmployee;
+}
