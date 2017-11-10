@@ -36,7 +36,7 @@ export class AddEmployeeComponent implements OnInit {
   onSubmit(form) {
     this.employeeService.insertEmployee(form)
       .subscribe((employee: IEmployee) => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/employees']);
       }, (err: any) => {
         this.logger.error('There are some problem');
       });
