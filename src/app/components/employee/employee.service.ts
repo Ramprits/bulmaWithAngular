@@ -24,7 +24,6 @@ export class EmployeeService {
   insertEmployee(employee: IEmployee): Observable<IEmployee | TrackerError> {
     return this.httpClient.post<IEmployeeResponse>(this.baseUrl + `/Employees`, employee)
       .map((data) => {
-        this.loggerService.error('OOOPS');
         return data.employee;
       });
   }
