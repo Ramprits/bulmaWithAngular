@@ -6,9 +6,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'b-fruit',
   templateUrl: './fruit.component.html',
-  styles: [`.row {
-    background-color: white;
-   margin-top: 10px;}`]
+  styles: [`.card{width:250px;height:250px;}`]
 })
 export class FruitComponent implements OnInit {
   fruits: Fruit[];

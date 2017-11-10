@@ -13,3 +13,5 @@ export * from '../components/fruit/fruit.component';
 export * from '../components/fruit/fruit.service';
 export * from '../components/fruit/fruit';
 export * from '../components/product/product.component';
+export * from '../components/employee/employee.component';
+export * from '../components/employee/employee.service';
