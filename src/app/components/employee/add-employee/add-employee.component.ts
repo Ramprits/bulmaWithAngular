@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SelectItem } from 'primeng/components/common/api';
+import { EmployeeService } from '../employee.service';
+import { Router } from '@angular/router';
+import { LoggerService } from '../../../core/Logger.Service';
+import { IEmployee } from '../employee';
 
 @Component({
   selector: 'b-add-employee',
@@ -9,7 +13,7 @@ import { SelectItem } from 'primeng/components/common/api';
 export class AddEmployeeComponent implements OnInit {
   addEmployee: FormGroup;
   genders: SelectItem[];
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private employeeService: EmployeeService, private router: Router, private logger: LoggerService) { }
   employee: Employee = {
     firstName: '',
     lastName: '', email: '',
@@ -30,7 +34,12 @@ export class AddEmployeeComponent implements OnInit {
     this.genders.push({ label: 'Female', value: 'Female' });
   }
   onSubmit(form) {
-
+    this.employeeService.insertEmployee(form)
+      .subscribe((employee: IEmployee) => {
+        this.router.navigate(['/home']);
+      }, (err: any) => {
+        this.logger.error('There are some problem');
+      });
   }
 }
 export class Employee {

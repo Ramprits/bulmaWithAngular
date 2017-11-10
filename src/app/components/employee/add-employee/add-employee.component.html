@@ -9,7 +9,7 @@
           <input pInputText type="text" formControlName="firstName" placeholder="First Name..." />
         </div>
         <div class="ui-grid-col-4">
-
+          <b-fielderrors [form]="addEmployee" field="firstName" nicename="First Name"> </b-fielderrors>
         </div>
       </div>
       <div class="ui-grid-row">
@@ -20,7 +20,7 @@
           <input pInputText type="text" formControlName="lastName" placeholder="Last Name..." />
         </div>
         <div class="ui-grid-col-4">
-
+          <b-fielderrors [form]="addEmployee" field="lastName" nicename="Last Name"> </b-fielderrors>
         </div>
       </div>
       <div class="ui-grid-row">
@@ -31,7 +31,7 @@
           <input pInputText type="text" formControlName="email" placeholder="Email..." />
         </div>
         <div class="ui-grid-col-4">
-
+          <b-fielderrors [form]="addEmployee" field="email" nicename="Email..."> </b-fielderrors>
         </div>
       </div>
       <div class="ui-grid-row">
@@ -41,7 +41,9 @@
         <div class="ui-grid-col-6">
           <input pInputText type="text" formControlName="mobile" placeholder="Mobile..." />
         </div>
-        <div class="ui-grid-col-4"></div>
+        <div class="ui-grid-col-4">
+          <b-fielderrors [form]="addEmployee" field="mobile" nicename="Mobile..."> </b-fielderrors>
+        </div>
       </div>
       <div class="ui-grid-row">
         <div class="ui-grid-col-2">
@@ -51,7 +53,7 @@
           <p-dropdown [options]="genders" formControlName="gender" [autoWidth]="false"></p-dropdown>
         </div>
         <div class="ui-grid-col-4">
-
+          <b-fielderrors [form]="addEmployee" field="gender" nicename="Gender..."> </b-fielderrors>
         </div>
       </div>
       <div class="ui-grid-row">
@@ -61,7 +63,9 @@
         <div class="ui-grid-col-6">
           <textarea pInputTextarea type="text" formControlName="address"></textarea>
         </div>
-        <div class="ui-grid-col-4"></div>
+        <div class="ui-grid-col-4">
+          <b-fielderrors [form]="addEmployee" field="address" nicename="Address..."> </b-fielderrors>
+        </div>
       </div>
       <div class="ui-grid-row">
         <div class="ui-grid-col-2"></div>
