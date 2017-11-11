@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { MenuItem, MenuModule } from 'primeng/primeng';
 import { Menu } from 'primeng/components/menu/menu';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import {
+  Router, Event, NavigationStart, NavigationEnd,
+  NavigationError, NavigationCancel
+} from '@angular/router';
 declare var jQuery: any;
 
 @Component({
@@ -16,13 +20,26 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   menuItems: MenuItem[];
   miniMenuItems: MenuItem[];
-
+  loading = false;
   @ViewChild('bigMenu') bigMenu: Menu;
   @ViewChild('smallMenu') smallMenu: Menu;
   menuVisible = false;
   constructor(private router: Router) {
+    router.events.subscribe((routerEvent: Event) => {
+      this.checkRouterEvent(routerEvent);
+    });
   }
+  checkRouterEvent(routerEvent: Event): void {
+    if (routerEvent instanceof NavigationStart) {
+      this.loading = true;
+    }
 
+    if (routerEvent instanceof NavigationEnd ||
+      routerEvent instanceof NavigationCancel ||
+      routerEvent instanceof NavigationError) {
+      this.loading = false;
+    }
+  }
   ngOnInit() {
 
     const handleSelected = function (event) {
@@ -33,6 +50,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       const selected = jQuery(event.originalEvent.target).closest('a');
       selected.addClass('menu-selected');
     };
+
 
     this.menuItems = [
       {

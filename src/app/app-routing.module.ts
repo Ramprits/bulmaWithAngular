@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import {
   HomeComponent, BookComponent, CustomerComponent, CustomerDetailComponent,
   DashboardComponent, FruitComponent, AddCustomerComponent, EmployeeComponent
 } from './components/index';
 import { AuthorComponent } from './components/author/author.component';
 import { AddEmployeeComponent } from './components/employee/add-employee/add-employee.component';
+import { Error404Component } from './shared/404.component';
 
 const routes: Routes = [
 
@@ -20,12 +22,10 @@ const routes: Routes = [
   { path: 'authors', component: AuthorComponent },
   { path: 'addEmployee', component: AddEmployeeComponent },
   { path: 'employees', component: EmployeeComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'home' }
-
-];
+  { path: '', pathMatch: 'full', redirectTo: 'home' }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

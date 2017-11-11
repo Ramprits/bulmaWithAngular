@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 @Component({
-    template: `
-    <p-panel header="404">
-    <h1 class="errorMessage">404'd</h1></p-panel>
+    template: `<p-panel header="404"></p-panel>
   `,
     styles: [`
     .errorMessage {

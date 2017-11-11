@@ -3,10 +3,13 @@ import { Title } from '@angular/platform-browser';
 import { AuthorService } from './author.service';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { IAuthor } from './author';
 import { LoggerService } from '../../core/Logger.Service';
 import { isDevMode } from '@angular/core';
+import {
+  Router, Event, NavigationStart, NavigationEnd,
+  NavigationError, NavigationCancel
+} from '@angular/router';
 
 @Component({
   selector: 'b-author',
@@ -17,6 +20,7 @@ export class AuthorComponent implements OnInit, OnDestroy {
   authors: any;
   authorRef: AngularFirestoreCollection<IAuthor>;
   loading: boolean;
+  ladingRoute = false;
 
   constructor(private title: Title,
     private employeeService: AuthorService,
@@ -24,8 +28,9 @@ export class AuthorComponent implements OnInit, OnDestroy {
     public fb: FormBuilder, private router: Router
   ) {
     this.title.setTitle('Author');
+    
   }
-
+  
   ngOnInit() {
     if (isDevMode()) {
       console.log('👋 Development!');
