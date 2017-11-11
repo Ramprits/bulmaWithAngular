@@ -7,6 +7,15 @@ export interface IEmployee {
     address: string;
 }
 
+export class Employee {
+    firstName?: '';
+    lastName?: '';
+    email?: '';
+    mobile?: '';
+    gender?: '';
+    address?: '';
+}
+
 export interface IEmployeeResponse {
     status: boolean;
     employee: IEmployee;

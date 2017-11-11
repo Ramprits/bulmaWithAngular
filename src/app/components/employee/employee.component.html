@@ -1,5 +1,5 @@
 <p-panel header="Employee List">
-  <p-dataTable [value]="employees" selectionMode="single" [(selection)]="selectedEmployee" [paginator]="true" rows="10" [reorderableColumns]="true"
+  <p-dataTable [value]="employees" selectionMode="single" [(selection)]="selectedEmployee" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="10" [reorderableColumns]="true"
     [resizableColumns]="true" [scrollable]="true" [responsive]="true">
     <p-column field="firstName" header="First Name" [sortable]="true"></p-column>
     <p-column field="lastName" header="Last Name" [sortable]="true"></p-column>
