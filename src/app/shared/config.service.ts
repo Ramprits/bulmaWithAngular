@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 export class ConfigService {
   _apiURI: string;
   constructor() {
-    this._apiURI = 'https://localhost:44363/api';
+    this._apiURI = 'http://localhost:55377/api';
   }
   getApiURI() {
     return this._apiURI;

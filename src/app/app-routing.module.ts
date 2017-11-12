@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'authors', component: AuthorComponent },
   { path: 'addEmployee', component: AddEmployeeComponent },
   { path: 'employees', component: EmployeeComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'home'}];
+  { path: 'user', loadChildren: 'app/components/user/user.module#UserModule' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { enableTracing: false })],

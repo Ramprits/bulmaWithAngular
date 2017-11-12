@@ -69,6 +69,10 @@ export class AppComponent implements OnInit, AfterViewInit {
         label: 'Customer', icon: 'fa-tasks', routerLink: ['/customers'],
         command: (event) => handleSelected(event), visible: !this.menuVisible
       },
+       {
+        label: 'Employee', icon: 'fa-tasks', routerLink: ['/employees'],
+        command: (event) => handleSelected(event), visible: !this.menuVisible
+      },
       {
         label: 'Author', icon: 'fa-users',
         routerLink: ['/authors'], command: (event) => handleSelected(event), visible: !this.menuVisible

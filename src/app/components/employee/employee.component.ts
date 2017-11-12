@@ -14,13 +14,16 @@ import { Router } from '@angular/router';
 export class EmployeeComponent implements OnInit {
   employees: IEmployee[] | TrackerError;
   selectedEmployee: IEmployee;
+  loading = false;
+  errorMessage: any;
   employee: Employee = new PrimeEmployee();
 
   constructor(private employeeService: EmployeeService, private router: Router) { }
   ngOnInit() {
+    this.loading = true;
     this.employeeService.getEmployees().subscribe((employee: IEmployee[]) => {
       this.employees = employee;
-    });
+    }, (error: any) => { this.errorMessage = error; }, () => { this.loading = false; });
   }
   cloneCar(c: Employee): Employee {
     const employee = new PrimeEmployee();
