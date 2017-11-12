@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { any } from './country';
 import { Observable } from 'rxjs/Observable';
 import { TrackerError } from './TrackerError';
 import { ConfigService } from '../shared/config.service';
@@ -12,10 +11,11 @@ export class DepartmentService {
     this._baseUrl = this.rootUrl.getApiURI();
   }
 
-  getDepartments(): Observable<any[] | TrackerError> {
-    return this.httpClient.get(this._baseUrl + `/common`).map((department: any[]) => {
-      return department;
-    }).catch(this.handleError);
+  getDepartments(): Observable<Department[] | TrackerError> {
+    return this.httpClient.get(this._baseUrl + `/common`)
+      .map((department: Department[]) => {
+        return department;
+      }).catch(this.handleError);
   }
 
   private handleError(error: HttpErrorResponse): Observable<TrackerError> {
@@ -25,4 +25,9 @@ export class DepartmentService {
     dataError.friendlyMessage = 'An error occurred retrieving data.';
     return Observable.throw(dataError);
   }
+}
+
+export interface Department {
+  value: string;
+  label: string;
 }
