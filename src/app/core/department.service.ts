@@ -3,15 +3,18 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { any } from './country';
 import { Observable } from 'rxjs/Observable';
 import { TrackerError } from './TrackerError';
+import { ConfigService } from '../shared/config.service';
 
 @Injectable()
-export class CountryService {
-  _baseUrl = 'assets/data/countries.json';
-  constructor(private httpClient: HttpClient) { }
+export class DepartmentService {
+  _baseUrl = '';
+  constructor(private httpClient: HttpClient, private rootUrl: ConfigService) {
+    this._baseUrl = this.rootUrl.getApiURI();
+  }
 
-  getCountries(): Observable<any[] | TrackerError> {
-    return this.httpClient.get(this._baseUrl).map((countries: any[]) => {
-      return countries;
+  getDepartments(): Observable<any[] | TrackerError> {
+    return this.httpClient.get(this._baseUrl + `/common`).map((department: any[]) => {
+      return department;
     }).catch(this.handleError);
   }
 

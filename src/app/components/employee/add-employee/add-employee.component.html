@@ -58,6 +58,17 @@
       </div>
       <div class="ui-grid-row">
         <div class="ui-grid-col-2">
+          Department *:
+        </div>
+        <div class="ui-grid-col-6">
+          <p-dropdown [options]="departments" placeholder="Select a Department" [autofocus]="true" formControlName="departmentGuid"></p-dropdown>
+        </div>
+        <div class="ui-grid-col-4">
+          <b-fielderrors [form]="addEmployee" field="departmentGuid" nicename="Department..."> </b-fielderrors>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
           Address:
         </div>
         <div class="ui-grid-col-6">

@@ -3,6 +3,8 @@ import { EmployeeService } from './employee.service';
 import { IEmployee, Employee } from './employee';
 import { TrackerError } from '../../core/index';
 import { Router } from '@angular/router';
+import { DepartmentService } from '../../core/department.service';
+import { SelectItem } from 'primeng/components/common/api';
 
 @Component({
   selector: 'b-employee',
@@ -12,18 +14,29 @@ import { Router } from '@angular/router';
 }`]
 })
 export class EmployeeComponent implements OnInit {
+
+  departments: SelectItem[] | TrackerError;
+  displayDialog = false;
   employees: IEmployee[] | TrackerError;
   selectedEmployee: IEmployee;
   loading = false;
   errorMessage: any;
   employee: Employee = new PrimeEmployee();
 
-  constructor(private employeeService: EmployeeService, private router: Router) { }
+  constructor(private employeeService: EmployeeService,
+    private router: Router, private departmentService: DepartmentService) { }
   ngOnInit() {
     this.loading = true;
     this.employeeService.getEmployees().subscribe((employee: IEmployee[]) => {
       this.employees = employee;
-    }, (error: any) => { this.errorMessage = error; }, () => { this.loading = false; });
+    }, (error: any) => { this.errorMessage = error; },
+      () => { this.loading = false; });
+  }
+  getDepartments() {
+    this.departmentService.getDepartments().subscribe((department: any[]) => {
+      this.departments = department;
+    }, (error: any) => { this.errorMessage = error; },
+      () => { this.loading = false; });
   }
   cloneCar(c: Employee): Employee {
     const employee = new PrimeEmployee();
@@ -34,6 +47,7 @@ export class EmployeeComponent implements OnInit {
     return employee;
   }
   onRowSelect(event) {
+    this.displayDialog = true;
     this.employee = this.cloneCar(event.data);
     console.log(this.employee);
   }

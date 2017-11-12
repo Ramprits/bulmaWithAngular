@@ -5,6 +5,7 @@ export interface IEmployee {
     mobile: string;
     gender: string;
     address: string;
+    departmentGuid: string;
 }
 
 export class Employee {
@@ -14,6 +15,7 @@ export class Employee {
     mobile?: '';
     gender?: '';
     address?: '';
+    departmentGuid?: '';
 }
 
 export interface IEmployeeResponse {

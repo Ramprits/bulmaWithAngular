@@ -12,3 +12,30 @@
     </p-footer>
   </p-dataTable>
 </p-panel>
+
+<p-dialog header="Book Details" [(visible)]="displayDialog" [responsive]="true" width="400">
+  <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="employee">
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4">
+        <label for="firstName">First Name :</label>
+      </div>
+      <div class="ui-grid-col-6">
+        <label class="label-control">{{employee.firstName}}</label>
+      </div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4">
+        <label for="lastName">Last Name :</label>
+      </div>
+      <div class="ui-grid-col-6">
+        <label class="label-control">{{employee.lastName}}</label>
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="fa-close" label="Delete" (click)="displayDialog=false" class="ui-button-danger"></button>
+      <button type="button" pButton icon="fa-check" label="Save" (click)="displayDialog=false"></button>
+    </div>
+  </p-footer>
+</p-dialog>
